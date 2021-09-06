@@ -4,9 +4,7 @@
 
 using namespace std;
 
-
-int main()
-{
+int main() {
     int noughts = 0;
     int crosses = 0;
     int field[3][3];
@@ -32,18 +30,18 @@ int main()
     bool noughts_tmp = true;
     bool crosses_tmp = true;
     for (int i = 0; i < 3; ++i) {
-        noughts_tmp &= field[i][i] == 2; 
-        crosses_tmp &= field[i][i] == 1;  
-    } 
+        noughts_tmp &= field[i][i] == 2;
+        crosses_tmp &= field[i][i] == 1;
+    }
     noughts_win |= noughts_tmp;
     crosses_win |= crosses_tmp;
 
     noughts_tmp = true;
     crosses_tmp = true;
     for (int i = 0; i < 3; ++i) {
-        noughts_tmp &= field[i][2 - i] == 2; 
-        crosses_tmp &= field[i][2 - i] == 1;  
-    } 
+        noughts_tmp &= field[i][2 - i] == 2;
+        crosses_tmp &= field[i][2 - i] == 1;
+    }
     noughts_win |= noughts_tmp;
     crosses_win |= crosses_tmp;
 
@@ -51,9 +49,9 @@ int main()
         noughts_tmp = true;
         crosses_tmp = true;
         for (int j = 0; j < 3; ++j) {
-            noughts_tmp &= field[i][j] == 2; 
-            crosses_tmp &= field[i][j] == 1;  
-        } 
+            noughts_tmp &= field[i][j] == 2;
+            crosses_tmp &= field[i][j] == 1;
+        }
         noughts_win |= noughts_tmp;
         crosses_win |= crosses_tmp;
     }
@@ -62,19 +60,17 @@ int main()
         noughts_tmp = true;
         crosses_tmp = true;
         for (int j = 0; j < 3; ++j) {
-            noughts_tmp &= field[j][i] == 2; 
-            crosses_tmp &= field[j][i] == 1;  
-        } 
+            noughts_tmp &= field[j][i] == 2;
+            crosses_tmp &= field[j][i] == 1;
+        }
         noughts_win |= noughts_tmp;
         crosses_win |= crosses_tmp;
     }
 
-    if ((noughts_win && crosses_win) ||
-            (noughts_win && crosses != noughts) ||
-            (crosses_win && crosses != noughts + 1)) {
+    if ((noughts_win && crosses_win) || (noughts_win && crosses != noughts) ||
+        (crosses_win && crosses != noughts + 1)) {
         cout << "NO" << endl;
-    }
-    else {
+    } else {
         cout << "YES" << endl;
     }
 
