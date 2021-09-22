@@ -1,5 +1,3 @@
-// solved with 3rd attempt
-
 #include <iostream>
 
 using namespace std;

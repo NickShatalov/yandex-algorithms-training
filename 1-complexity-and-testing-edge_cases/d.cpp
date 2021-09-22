@@ -1,4 +1,3 @@
-// solved with 6th attempt
 // hint: https://youtu.be/J65GNFfL94c
 
 #include <algorithm>
