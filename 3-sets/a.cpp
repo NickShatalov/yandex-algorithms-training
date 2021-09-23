@@ -1,12 +1,11 @@
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
     vector<bool> is_known(n, false);
@@ -41,8 +40,7 @@ int main()
             for (int candidate : candidates) {
                 is_known[candidate] = false;
             }
-        }
-        else {
+        } else {
             cout << "NO" << endl;
             known_num += candidates.size();
             for (int candidate : candidates) {
