@@ -1,13 +1,12 @@
 #include <algorithm>
-#include <iostream>
-#include <vector>
 #include <deque>
+#include <iostream>
 #include <utility>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n, k;
     cin >> n >> k;
 
@@ -22,9 +21,10 @@ int main()
         periods[i] = b;
     }
 
-    sort(next_day.begin(), next_day.end(), [](pair<int, int>& lhs, pair<int, int> rhs) {
-        return lhs.second < rhs.second;
-    });
+    sort(next_day.begin(), next_day.end(),
+         [](pair<int, int>& lhs, pair<int, int> rhs) {
+             return lhs.second < rhs.second;
+         });
 
     int cur_day = next_day.front().second;
     int res = 0;
@@ -37,9 +37,10 @@ int main()
             next_day.push_back({el.first, el.second + periods[el.first]});
             next_day.pop_front();
         }
-        sort(next_day.begin(), next_day.end(), [](pair<int, int>& lhs, pair<int, int> rhs) {
-            return lhs.second < rhs.second;
-        });
+        sort(next_day.begin(), next_day.end(),
+             [](pair<int, int>& lhs, pair<int, int> rhs) {
+                 return lhs.second < rhs.second;
+             });
 
         cur_day = next_day.front().second;
     }
