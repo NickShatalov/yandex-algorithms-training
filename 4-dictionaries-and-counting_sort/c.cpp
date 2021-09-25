@@ -1,11 +1,10 @@
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n, k;
     cin >> n >> k;
     string s;
