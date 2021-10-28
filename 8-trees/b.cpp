@@ -1,14 +1,15 @@
+#include <algorithm>
 #include <deque>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
 typedef unsigned long long ull;
 
 int dfs(vector<vector<size_t>>& g, size_t v, vector<bool>& visited,
-        vector<ull>& subtree_size, vector<ull>& depth, vector<size_t>& parents) {
+        vector<ull>& subtree_size, vector<ull>& depth,
+        vector<size_t>& parents) {
     visited[v] = true;
     subtree_size[v] += 1;
     for (auto u : g[v]) {
@@ -47,7 +48,7 @@ int main() {
         s += depth[i];
         visited[i] = false;
     }
-    vector<ull> res(n); 
+    vector<ull> res(n);
     res[0] = s;
     deque<size_t> st;
     st.push_back(0);
@@ -74,8 +75,7 @@ int main() {
     for (size_t i = 1; i < n; ++i) {
         if (tmp[i].first == tmp[0].first) {
             res_idx.push_back(tmp[i].second);
-        }
-        else {
+        } else {
             break;
         }
     }
